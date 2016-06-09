@@ -1,14 +1,7 @@
-description:
- ☐ An app so that user can add picture of their library
- ☐ It's an instagram like app so that user can post a picture and add comments about it
- ☐ Jessica add a Post(Image) about her libraries.
- ☐ Jessica choose which Image will be at the front of the Post
- ☐ Paul and Stephanie like and comment about her post
+description of the project:
 
 
- Model:
-  ☐ User
-    ☐ **Library
-    ☐ **Comment
-    ☐ **Like
-    ☐ **Repost
+Models:
+
+
+todo:
