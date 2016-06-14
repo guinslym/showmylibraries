@@ -53,7 +53,7 @@ THIRD_PARTY_APPS =  (
     'bootstrap_pagination',
 )
 LOCAL_APPS = (
-    #'applications.cumberland',
+    'applications.biblio',
 )
 
 CACHES = {
