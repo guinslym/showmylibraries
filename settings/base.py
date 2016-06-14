@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 
 WSGI_APPLICATION = 'showmylibrary.wsgi.application'
 ROOT_URLCONF = 'showmylibrary.urls'
-SITE_ID=1
+SITE_ID = 1
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import logging
