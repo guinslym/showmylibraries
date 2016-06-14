@@ -29,3 +29,4 @@ staticfiles_dev/
 htmlcov/
 applications/*/tests/
 secret*
+settings/production.py
