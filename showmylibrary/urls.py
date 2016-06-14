@@ -10,6 +10,7 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^', include('applications.biblio.urls')),
+    url(r'^', include('applications.account.urls')),
 ]
 #Static files serves with WhiteNoise (pip install WhiteNoise)
 #urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
