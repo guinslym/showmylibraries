@@ -7,3 +7,6 @@ Installation steps:
  ☐ python manage.py check
  ☐ py.test
  ☐ if everything is ok then 'rm myproject/settings.py'
+
+ helper-documentation:
+  ☐ https://github.com/smrkem/Django-TDD-goat-tutorial

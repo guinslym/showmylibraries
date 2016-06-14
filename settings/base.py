@@ -10,8 +10,9 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.8/ref/settings/
 """
 
-WSGI_APPLICATION = 'wadiyabi.wsgi.application'
-ROOT_URLCONF = 'wadiyabi.urls'
+WSGI_APPLICATION = 'sugbox.wsgi.application'
+ROOT_URLCONF = 'sugbox.urls'
+SITE_ID=1
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import logging
@@ -46,6 +47,14 @@ BASE_APPS =  (
     'django.contrib.staticfiles',
     'django.contrib.humanize',
     'django_extensions',
+)
+THIRD_PARTY_APPS =  (
+    'rest_framework',
+    'MySQLdb',
+    'bootstrap_pagination',
+)
+LOCAL_APPS = (
+    #'applications.cumberland',
 )
 
 CACHES = {
@@ -115,3 +124,42 @@ STATIC_ROOT = os.path.join('staticfiles')
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
+
+# ckeditor settings
+CKEDITOR_UPLOAD_PATH = 'ckeditor_uploads/'
+CKEDITOR_IMAGE_BACKEND = 'pillow'
+CKEDITOR_JQUERY_URL = \
+    '//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js'
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': [{
+            'name': 'basic',
+            'items': ['Bold', 'Italic', 'Underline', 'RemoveFormat', '-',
+                      'PasteText', 'Undo', 'Redo', 'Format', 'Source', ],
+        }],
+    },
+}
+
+
+AUTH_PASSWORD_VALIDATORS = [
+    {
+        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+    },
+]
+
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'django.contrib.auth.backends.RemoteUserBackend',
+)
+
+LOGIN_REDIRECT_URL = "/"
+SHELL_PLUS = "ipython"
