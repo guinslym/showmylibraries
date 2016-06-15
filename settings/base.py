@@ -51,6 +51,7 @@ BASE_APPS =  (
 THIRD_PARTY_APPS =  (
     'rest_framework',
     'bootstrap_pagination',
+    'social.apps.django_app.default',
 )
 LOCAL_APPS = (
     'applications.biblio',
@@ -156,10 +157,18 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+SHELL_PLUS = "ipython"
+
+
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
-    'django.contrib.auth.backends.RemoteUserBackend',
+    'applications.account.authentication.EmailAuthBackend',
 )
 
-LOGIN_REDIRECT_URL = "/"
-SHELL_PLUS = "ipython"
+from django.core.urlresolvers import reverse_lazy
+LOGIN_REDIRECT_URL = reverse_lazy('dashboard')
+LOGIN_URL = reverse_lazy('login')
+LOGOUT_URL = reverse_lazy('logout')
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')

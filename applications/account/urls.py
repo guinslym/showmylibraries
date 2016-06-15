@@ -1,7 +1,7 @@
 from django.conf.urls import url
 
 from django.contrib.auth.views import login
-#With django 1.10 I need to pass the callable instead of 
+#With django 1.10 I need to pass the callable instead of
 #url(r'^login/$', 'django.contrib.auth.views.login', name='login')
 
 from django.contrib.auth.views import logout
@@ -17,7 +17,7 @@ from . import views
 urlpatterns = [
         # post views
         #url(r'^login/$', views.user_login, name='login'),
-        
+
         #login logout
         url(r'^login/$', login, name='login'),
         url(r'^logout/$', logout, name='logout'),
@@ -46,5 +46,3 @@ urlpatterns = [
         #root url
         url(r'^$', views.dashboard, name='dashboard'),
         ]
-
-
